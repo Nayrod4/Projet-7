@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "nay",
+    "password": "Admin1515!",
+    "database": "database_development_groupoma",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "nay",
+    "password": "Admin1515!",
+    "database": "database_test_groupoma",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "nay",
+    "password": "Admin1515",
+    "database": "database_production_groupoma",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
