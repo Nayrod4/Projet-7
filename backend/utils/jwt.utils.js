@@ -18,14 +18,16 @@ module.exports = {
     return (authorization != null) ? authorization.replace('Bearer ', '') : null;
   },
   getUserId: function(authorization) {
-    const userId = -1;
+    let userId = -1;
     const token = module.exports.parseAuthorization(authorization);
+    console.log(token);
     if(token != null) {
       try {
         const jwtToken = jwt.verify(token, JWT_SIGN_SECRET);
+        console.log(typeof jwtToken);
         if(jwtToken != null)
           userId = jwtToken.userId;
-      } catch(err) { }
+      } catch(err) {console.log(err); }
     }
     return userId;
   }
