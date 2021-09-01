@@ -21,6 +21,6 @@ server.get('/', function (req, res) {
 server.use('/api/', apiRouter);
 
 /// Lancement du serveur
-server.listen(8070, function() {
+server.listen(3070, function() {
 console.log('Serveur en écoute, well done')
 });
