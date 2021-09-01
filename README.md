@@ -1,4 +1,4 @@
-# Projet-7 - Groupoma - Doria - OpenClassRoom
+# Projet-7 - Groupoma - Dorian - OpenClassRoom
 <br/>
 <h1>:hammer: En cours de construction :hammer:</h1>
 <br /> ~Phase 1 : création de l'api
