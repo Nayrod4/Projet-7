@@ -1,6 +1,6 @@
 # Partie Frontend
 
-### créer avec React
+### créer avec Reactjs, Bootstrap, Axio, Jwt
 <br />
 :rotating_light: Attention bien lancer le backend avant de lancer le Frontend :rotating_light:
 
