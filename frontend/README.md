@@ -13,8 +13,10 @@ Entrer `npm install` dans le dossier source du frontend
 
 <br />
 
-## Pour le lancer entrer
+## Pour le lancer :
 
 Entrer `npm start` toujours dans le dossier source du frontend
 
-##
+## Pour vous y connecter :
+
+Rendez vous à cette adresse `localhost:3000/home`
