@@ -21,7 +21,7 @@ Entrer `npm install` dans le dossier source du backend
 
 ## Pour créer la base de donnée :
 
-Toujours dans le dossier source backend entrer : `sequelize db:create' puis : `sequelize db:migrate`
+Toujours dans le dossier source backend entrer : `sequelize db:create` puis : `sequelize db:migrate`
 
 <br />
 
