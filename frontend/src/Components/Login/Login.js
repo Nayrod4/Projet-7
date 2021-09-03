@@ -25,6 +25,7 @@ function LoginForm(props) {
         //     "username":state.email,
         //     "password":state.password,
         // }
+        
         axios({
             method: 'post',
             url: API_BASE_URL+'/users/login',
@@ -58,7 +59,7 @@ function LoginForm(props) {
             .catch(function (error) {
                 console.log(error);
             });
-    }
+    }   
     const redirectToHome = () => {
         props.updateTitle('Home')
         props.history.push('/home');

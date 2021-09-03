@@ -23,10 +23,10 @@ function Home() {
       }, []);
     return (
         <div className="App">
-           <h2> Posts </h2>
-            {posts.map(post =>
+           <h2> Fil d'Actualités </h2>
+            {/* {posts.map(post =>
                 <Post post = {post} key={post.id} token={token} />
-            )}
+            )} */}
             <AddPost setPosts={setPosts}  />
         </div>
     );

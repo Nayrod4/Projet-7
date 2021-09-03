@@ -38,12 +38,6 @@ function App() {
                         <Route path="/home" exact={true}>
                             <Home showError={updateErrorMessage} updateTitle={updateTitle}/>
                         </Route>
-                        <Route path="/register">
-                            <Register showError={updateErrorMessage} updateTitle={updateTitle}/>
-                        </Route>
-                        <Route path="/login">
-                            <Login showError={updateErrorMessage} updateTitle={updateTitle}/>
-                        </Route>
                         <UserRoute path="/home" component={Home} />
                     </Switch>
                     <Alert errorMessage={errorMessage} hideError={updateErrorMessage}/>
@@ -67,6 +61,7 @@ function App() {
                                 <Route path="/main"><Button href="/register" variant="outline-dark">S'enregistrer</Button></Route>
                         </Card.Body>
                         </Card>
+                        <UserRoute path="/home" component={Home} />
                 </Route>
                 </Switch>        
                 <div className="container d-flex align-items-center flex-column">

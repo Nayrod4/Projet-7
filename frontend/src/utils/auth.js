@@ -17,7 +17,6 @@ if (saved && (new Date().getTime() - saved > hours * 60 * 60 * 1000)) {
 	}
 } else if (JSON.parse(localStorage.getItem("isAuthenticated")) === true) { // Init initialAuth if already user in local storage
 	initialAuth = {
-		user: JSON.parse(localStorage.getItem("user")),
 		token: JSON.parse(localStorage.getItem("token")),
 		email: JSON.parse(localStorage.getItem("email")),
 		isAuthenticated: JSON.parse(localStorage.getItem("isAuthenticated")),
@@ -28,7 +27,6 @@ if (saved && (new Date().getTime() - saved > hours * 60 * 60 * 1000)) {
 	initialAuth = {
 		isAuthenticated: false,
 		isAdmin: false,
-		user: null,
 		token: null,
 	}
 }
@@ -40,21 +38,14 @@ export const AuthReducer = (authState, action) => {
 	switch (action.type) {
 		case "LOGIN":
 			// save user data
-			localStorage.setItem("user", JSON.stringify(action.payload.user))
 			localStorage.setItem("token", JSON.stringify(action.payload.token))
 			localStorage.setItem("email", JSON.stringify(action.payload.email))
 			localStorage.setItem("isAuthenticated", JSON.stringify(action.payload.isAuthenticated))
 			localStorage.setItem("isAdmin", JSON.stringify(action.payload.isAdmin))
 			localStorage.setItem('savedAt', new Date().getTime())
 
-			// save profile picture
-			API_BASE_URL(action.payload.photo).then((dataUrl) => {
-				localStorage.setItem("photo", JSON.stringify(dataUrl))
-			})
-
 			return {
 				...authState,
-				user: action.payload.user,
 				token: action.payload.token,
 				email: action.payload.email,
 				isAuthenticated: action.payload.isAuthenticated,
@@ -65,7 +56,6 @@ export const AuthReducer = (authState, action) => {
 			return {
 				isAuthenticated: false,
 				isAdmin: false,
-				user: null,
 				token: null,
 			}
 		default:
