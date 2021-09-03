@@ -68,12 +68,16 @@ module.exports = {
       },
       function(messageFound, userFound, userAlreadyLikedFound, done) {
         if(!userAlreadyLikedFound) {
-          messageFound.addUser(userFound, { isLike: LIKED })
-          .then(function (alreadyLikeFound) {
+          models.Like.create({
+            userId: userId,
+            messageId: messageId,
+            isLike  : 1,
+          })
+          .then(function(newMessage) {
             done(null, messageFound, userFound);
           })
           .catch(function(err) {
-            return res.status(500).json({ 'error': 'Impossible de mettre un like1' });
+            return res.status(500).json({ 'error': 'Impossible de mettre un like1'+err });
           });
         } else {
           if (userAlreadyLikedFound.isLike === DISLIKED) {
@@ -165,6 +169,7 @@ module.exports = {
      },
      function(messageFound, userFound, userAlreadyLikedFound, done) {
       if(!userAlreadyLikedFound) {
+        userFound.isLike = DISLIKED;
         messageFound.addUser(userFound, { isLike: DISLIKED })
         .then(function (alreadyLikeFound) {
           done(null, messageFound, userFound);
@@ -174,11 +179,16 @@ module.exports = {
         });
       } else {
         if (userAlreadyLikedFound.isLike === LIKED) {
-          userAlreadyLikedFound.update({
-            isLike: DISLIKED,
-          }).then(function() {
+
+          models.Like.create({
+            userId: userId,
+            messageId: messageId,
+            isLike  : DISLIKED,
+          })
+          .then(function() {
             done(null, messageFound, userFound);
-          }).catch(function(err) {
+          })
+          .catch(function(err) {
             res.status(500).json({ 'error': 'Impossible de mettre un dislike' });
           });
         } else {

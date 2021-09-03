@@ -27,7 +27,7 @@ function Register(props) {
                 "username":state.username,
                 "password":state.password,
             }
-            axios.post(API_BASE_URL+'users/register', payload)
+            axios.post(API_BASE_URL+'users/register', state.email, state.username, state.password)
                 .then(function (response) {
                     if(response.data.code === 200){
                         setState(prevState => ({
@@ -66,7 +66,7 @@ function Register(props) {
     }
     return(
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <form>
+            <form className="text-center">
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputEmail1">Adresse Email</label>
                     <input type="email"
@@ -115,10 +115,10 @@ function Register(props) {
                 <br />
                 <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                     onClick={handleSubmitClick}
                 >
-                    S'enregistrer
+                    Créer mon compte
                 </button>
             </form>
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">

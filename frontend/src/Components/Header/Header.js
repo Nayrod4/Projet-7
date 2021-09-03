@@ -29,7 +29,7 @@ function Header(props) {
             </div>
         </nav>*/
     <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Groupoma</Navbar.Brand>
+        <Navbar.Brand href="/main">Groupomania</Navbar.Brand>
         <Nav className="mr-auto">
             <Nav.Link href="#home"onClick={register}>S'enregistrer</Nav.Link>
             <Nav.Link href="#" onClick={login}>Se connecter</Nav.Link>

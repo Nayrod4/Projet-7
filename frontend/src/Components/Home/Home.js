@@ -6,14 +6,21 @@ import Post from "../Messages/Messages";
 function MainPage() {
     const [posts, setPosts] = useState([]);
     const token = localStorage.getItem('token');
-    useEffect(async () => {
-        const response = await axios.get(
-            'http://localhost:3080/api/messages/', { headers: {"Authorization" : `Bearer ${token}`} }
-        );
-        console.log(response.data);
-        setPosts(response.data);
-    }, []);
-
+    // useEffect(async () => {
+    //     const response = await axios.get(
+    //         'http://localhost:3080/api/messages/', { headers: {"Authorization" : `Bearer ${token}`} }
+    //     );
+    //     console.log(response.data);
+    //     setPosts(response.data);
+    // }, []);
+    useEffect(() => {
+        async function fetchData() {
+          const response = await axios.get('http://localhost:3080/api/messages/', { headers: {"Authorization" : `Bearer ${token}`} });
+          console.log(response.data);
+          setPosts(response.data);
+        }
+        fetchData();
+      }, []);
     return (
         <div className="App">
            <h2> Posts </h2>

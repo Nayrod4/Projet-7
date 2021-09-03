@@ -62,7 +62,7 @@ function LoginForm(props) {
     }
     return(
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <form>
+            <form className="text-center">
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputEmail1">Adresse Email</label>
                     <input type="email"
@@ -90,7 +90,7 @@ function LoginForm(props) {
                 </div>
                 <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                     onClick={handleSubmitClick}
                 >Connection</button>
             </form>
