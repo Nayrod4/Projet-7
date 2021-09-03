@@ -1,5 +1,6 @@
 /// Imports du Framework express
 const express = require('express');
+const cors = require('cors');
 /// Recuparation des arguments et parameters du body de la request HTTP
 const bodyParser = require('body-parser');
 /// Routes
@@ -7,6 +8,8 @@ const apiRouter = require('./apiRouter').router;
 /// Instance du serveur express
 const server = express();
 
+
+server.use(cors())
 
 /// Body parser config
 server.use(bodyParser.urlencoded({ extended: true }));

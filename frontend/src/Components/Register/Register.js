@@ -22,12 +22,20 @@ function Register(props) {
     const sendDetailsToServer = () => {
         if(state.email.length && state.username.length && state.password.length ) {
             props.showError(null);
-            const payload={
-                "email":state.email,
-                "username":state.username,
-                "password":state.password,
-            }
-            axios.post(API_BASE_URL+'users/register', state.email, state.username, state.password)
+            // const payload={
+            //     "email":state.email,
+            //     "username":state.username,
+            //     "password":state.password,
+            // }
+            axios({
+                method: 'post',
+                url: API_BASE_URL+'/users/register',
+                data: {
+                  email: state.email,
+                  username: state.username,
+                  password: state.password
+                }
+              })
                 .then(function (response) {
                     if(response.data.code === 200){
                         setState(prevState => ({

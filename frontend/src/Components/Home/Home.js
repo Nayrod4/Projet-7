@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Post from "../Messages/Messages";
-// import AddPost from "../AddPost/AddPost";
+import AddPost from "../AddPost/AddPost";
 
-function MainPage() {
+function Home() {
     const [posts, setPosts] = useState([]);
     const token = localStorage.getItem('token');
     // useEffect(async () => {
@@ -27,9 +27,9 @@ function MainPage() {
             {posts.map(post =>
                 <Post post = {post} key={post.id} token={token} />
             )}
-            {/* <AddPost setPosts={setPosts}  /> */}
+            <AddPost setPosts={setPosts}  />
         </div>
     );
 }
 
-export default MainPage;
+export default Home;

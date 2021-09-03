@@ -19,9 +19,7 @@ function AddPost(props) {
             url: API_BASE_URL+'/messages/new',
             data: {
             headers: {"Authorization" : `Bearer ${token}`},
-              title: text.title,
               content: text.content,
-              like: 0
             }
           })
             .then((response) => {

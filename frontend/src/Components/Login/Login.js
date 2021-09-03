@@ -21,13 +21,20 @@ function LoginForm(props) {
 
     const handleSubmitClick = (e) => {
         e.preventDefault();
-        const payload={
-            "username":state.email,
-            "password":state.password,
-        }
-        axios.post(API_BASE_URL+'users/login', payload)
+        // const payload={
+        //     "username":state.email,
+        //     "password":state.password,
+        // }
+        axios({
+            method: 'post',
+            url: API_BASE_URL+'/users/login',
+            data: {
+              email: state.email,
+              password: state.password
+            }
+          })
             .then(function (response) {
-                if(response.status === 200){
+                if(response.status === 201){
                     setState(prevState => ({
                         ...prevState,
                         'successMessage' : 'Connection avec succés. Redirection à l\'accueil..'

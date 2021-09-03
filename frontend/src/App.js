@@ -6,9 +6,10 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Header from "./Components/Header/Header";
+import HeaderUser from "./Components/Header/HeaderUser"
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
-import MainPage from "./Components/Home/Home";
+import Home from "./Components/Home/Home";
 import Alert from "./Components/Alert/Alert";
 import UserRoute from "./Components/UserRoute";
 import {initialAuth, AuthReducer} from "./utils/auth";
@@ -31,11 +32,11 @@ function App() {
     routes = (
         <Router>
             <div className="App">
-                <Header title={title}/>
+                <HeaderUser title={title}/>
                 <div className="container d-flex align-items-center flex-column">
                     <Switch>
-                        <Route path="/" exact={true}>
-                            <Register showError={updateErrorMessage} updateTitle={updateTitle}/>
+                        <Route path="/home" exact={true}>
+                            <Home showError={updateErrorMessage} updateTitle={updateTitle}/>
                         </Route>
                         <Route path="/register">
                             <Register showError={updateErrorMessage} updateTitle={updateTitle}/>
@@ -43,7 +44,7 @@ function App() {
                         <Route path="/login">
                             <Login showError={updateErrorMessage} updateTitle={updateTitle}/>
                         </Route>
-                        <UserRoute path="/home" component={MainPage} />
+                        <UserRoute path="/home" component={Home} />
                     </Switch>
                     <Alert errorMessage={errorMessage} hideError={updateErrorMessage}/>
                 </div>
