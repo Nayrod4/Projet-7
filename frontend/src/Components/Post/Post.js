@@ -24,7 +24,7 @@ function AllPost(props) {
                 title:text.title,
                 content: text.content,
                 attachement:text.attachment,
-                like:text.like,
+                like:0,
             }
           })
             .then((response) => {
@@ -42,10 +42,9 @@ function AllPost(props) {
             <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="{text.attachment}" alt="" />
   <Card.Body>
-    <Card.Title>{text.title}</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+    <Card.Title>test{text.title}</Card.Title>
+    <Card.Text>test
+      {text.content}
     </Card.Text>
   </Card.Body>
 </Card>
