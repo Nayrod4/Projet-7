@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Post from "../Messages/Messages";
+import AllPost from "../Post/Post";
 import AddPost from "../AddPost/AddPost";
+
 
 function Home() {
     const [posts, setPosts] = useState([]);
@@ -21,12 +22,12 @@ function Home() {
         }
         fetchData();
       }, []);
-    return (
+      return (
         <div className="App">
-           <h2> Fil d'Actualités </h2>
-            {/* {posts.map(post =>
-                <Post post = {post} key={post.id} token={token} />
-            )} */}
+           <h2> Posts </h2>
+            {posts.map(post =>
+                <AllPost post = {post} key={post.id} token={token} />
+            )}
             <AddPost setPosts={setPosts}  />
         </div>
     );
