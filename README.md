@@ -12,4 +12,4 @@
 <br /> ~Phase 2 : création du Frontend avec React
 <br /> ~~Phase 2.1 : création des components:construction::construction_worker:
 <br /> ~~~Phase 2.2 : création de app.js avec les route ainsi que les switch
-<br /> ~~~~Phase 2.3 : Communication entre le front et le back à l'aide d'Axios:construction::construction_worker:
+<br /> ~~~~Phase 2.3 : Communication entre le front et le back à l'aide d'Axios
